@@ -1,8 +1,8 @@
 up:
-	docker compose --env-file .env_public --env-file .env_private up --build -d
+	docker compose --env-file public.env --env-file private.env up --build -d
 
 down:
-	docker compose --env-file .env_public --env-file .env_private down
+	docker compose --env-file public.env --env-file private.env down
 
 ### Run & Deploy Pipeline
 hello_world:

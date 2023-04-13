@@ -1,14 +1,25 @@
-Template for Prefect Flows
+# Template for Prefect Flows
 
-To set up postgres and connection to Prefect cloud, create a `.env` file and populate the following (you may keep the postgres info as is):
+Run these commands to setup your project locally.
 
-```
-WAREHOUSE_USER=postgres
-WAREHOUSE_PASSWORD=password
-WAREHOUSE_DB=warehouse
-WAREHOUSE_HOST=warehouse
-WAREHOUSE_PORT=5432
+1. Create a new repository with the template
+2. Clone and navigate to the repository
+3. Create an .env file and populate the following variables:
 
-PREFECT_API_KEY=<YOUR API KEY>
-PREFECT_WS=<YOUR WORKSPACE>
-```
+    ```
+    WAREHOUSE_USER=postgres
+    WAREHOUSE_PASSWORD=password
+    WAREHOUSE_DB=warehouse
+    WAREHOUSE_HOST=warehouse
+    WAREHOUSE_PORT=5432
+
+    PREFECT_API_KEY=<YOUR API KEY>
+    PREFECT_WS=<YOUR WORKSPACE>
+    ```
+
+4. Use the following `Makefile` commands to spin up and test the repo:
+    ```shell
+    # Build containers & test
+    make up # Spin up the containers
+    make pytest # Run all the test files under /tests
+    ```

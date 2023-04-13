@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import psycopg2
 from sqlalchemy import create_engine
 
+
 @dataclass
 class DBConnection:
     db: str
@@ -37,14 +38,10 @@ class WarehouseConnection:
         # try appending the DataFrame (df) to the respective Postgres table (table).
         # default param is append.
         try:
-            df.to_sql(
-                table,
-                con=engine,
-                index=False,
-                if_exists='append'
-            )
-            
+            df.to_sql(table, con=engine, index=False, if_exists='append')
+
             print("to_sql() completed via. (sqlalchemy)")
-        except Exception as e: print(e)
+        except Exception as e:
+            print(e)
         finally:
             engine.dispose()

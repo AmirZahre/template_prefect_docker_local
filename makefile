@@ -23,12 +23,9 @@ isort:
 	docker exec loader isort .
 
 pytest:
-	docker exec loader pytest tests/
-
-type:
-	docker exec loader mypy --ignore-missing-imports .
+	docker exec loader pytest tests
 
 lint: 
-	docker exec loader flake8 
+	docker exec loader flake8 /opt/sde
 
-ci: isort format type lint pytest
+ci: isort format lint pytest

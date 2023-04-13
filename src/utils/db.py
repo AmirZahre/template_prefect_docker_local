@@ -35,7 +35,7 @@ class WarehouseConnection:
     def insert_table(self, df, table, if_exists="append", test=False):
         engine = create_engine(self.conn_url)
 
-        # try appending the DataFrame (df) to the respective Postgres table (table).
+        # try appending df to the respective Postgres table (table).
         # default param is append.
         try:
             df.to_sql(table, con=engine, index=False, if_exists='append')

@@ -8,5 +8,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Spin up containers
         run: make up
-      - name: Run pytest
-        run: make pytest
+      - name: Run CI test
+        run: make ci

@@ -37,6 +37,12 @@ services:
     command: >
       bash -c "prefect cloud workspace set --workspace ${PREFECT_WS}
       && tail -f /dev/null"
+    depends_on:
+      warehouse:
+        condition: service_healthy
+    links:
+      - warehouse
+
 
   dashboard:
     image: metabase/metabase

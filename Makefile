@@ -17,6 +17,3 @@ prefect_agent:
 
 pytest:
 	docker exec loader pytest tests/
-
-location:
-	docker exec loader ls

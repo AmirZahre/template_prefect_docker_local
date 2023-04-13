@@ -21,5 +21,14 @@ Run these commands to setup your project locally.
     ```shell
     # Build containers & test
     make up # Spin up the containers
+
     make pytest # Run all the test files under /tests
+
+    make hello_world # runs the Prefect pipeline
+
+    make hello_world_deploy # deploys the Prefect pipeline
+
+    make prefect_agent # spins up a Prefect Agent to run the pipeline via. Prefect Cloud
+
+    make down # spins down the containers
     ```
